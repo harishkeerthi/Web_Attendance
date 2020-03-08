@@ -1,0 +1,19 @@
+<table class=" table table-secondary">
+    <thead>
+        
+        <th>STUDENT NAME</th>
+        <th>FATHER NAME</th>
+        <th>MOBIL NO</th>
+        <th>GENDER</th>
+        <th>DATE & TIME</th>
+        <th>ATTENDANCE</th>
+    </thead>
+    <tr *ngFor="let obj of getstudentdata">
+        <td>{{obj.name}}</td>
+        <td>{{obj.fathername}}</td>
+        <td>{{obj.mobil}}</td>
+        <td>{{obj.gender}}</td>
+        <td>{{obj.date}}</td>
+        <td>{{obj.att}}</td>
+   </tr>
+</table>

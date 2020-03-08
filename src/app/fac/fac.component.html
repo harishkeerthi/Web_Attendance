@@ -1,0 +1,31 @@
+<div class="text-center"><button class="bg bg-success btn-lg" (click)="read()">GET STUDENT DEATIALS</button></div>
+<div *ngIf="tableview">
+<table class="table">
+    <thead>
+    <th>user name</th>
+    <th>Guardian/father name</th>
+    <th>gender</th>
+    <th>email</th>
+    <th>present</th>
+</thead>
+    <tr *ngFor="let x of array; let i=index">
+        <td>{{x.name}}</td>
+        <td>{{x.fathername}}</td>
+        <td>{{x.gender}}</td>
+        <td>{{x.email}}</td>
+       
+         <td>
+                 <!-- for attendance radio buttons -->
+             <label for="i"> 
+                <input type="radio"  id="a"  [name]="x.name" value="present" #present ngModel
+                (change)="senddata1(x,present.value)">present <br>
+                         
+                <input type="radio"  id="b" [name]="x.name" value="absent" #absent ngModel
+                (change)="senddata1(x,absent.value)"> absent</label>
+        </td>
+    </tr>
+    
+    <div class="text-center">
+    <button class="btn-lg bg bg-success" (click)="save()">save</button></div>
+</table>
+</div>

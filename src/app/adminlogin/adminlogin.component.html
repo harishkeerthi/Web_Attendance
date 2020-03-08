@@ -1,0 +1,24 @@
+
+
+<div class="text-center">
+    <form #ref="ngForm" (ngSubmit)="Loginsend(ref.value);ref.reset()">
+        <div class="jumbotron" >
+            <h1>Login</h1>
+           
+            <label for="">Enter user Name</label>
+            <input type="text" name="name" class="form-control" ngModel>
+            <br>
+            <label for="">Enter Password </label>
+            <input type="password" name="password" class="form-control" ngModel>
+        </div>
+
+        <button type="submit" class="text-success">Login</button>
+        
+    </form>
+
+</div>
+ 
+
+<router-outlet></router-outlet>
+
+

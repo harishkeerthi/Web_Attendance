@@ -1,0 +1,28 @@
+<div class="text-center">
+<button class="bg bg-success btn-lg" (click)="admindata()">Assign ID To Students</button>
+</div>
+
+<table class="table" >
+    <thead *ngIf="table">
+        <th>name</th>
+        <th>email</th>
+        <th>D O B</th>
+        <th>Mobil</th>
+        <th>id</th>
+
+        <tr *ngFor="let x of array">
+                <td>{{x.name}}</td>
+                <td>{{x.email}}</td>
+                <td>{{x.DOB}}</td>
+                <td>{{x.mobil}}</td>
+
+                 <td>
+                    <input type="text" [name]="x.email" #ref ngModel
+                    (change)="datatran(x,ref.value)" placeholder="-- Enter Id --">
+                </td>
+        </tr>
+<div class="text-center">
+        <button class="bg bg-success btn-lg" (click)="datafromadmin()">Send Data</button>
+</div>
+    </thead>
+</table>

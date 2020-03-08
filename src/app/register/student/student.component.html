@@ -1,0 +1,57 @@
+<div class="text-center">
+    <h1 class="text-success">Student Registration</h1>
+      <div class="jumbotron">
+
+
+
+        <form #ref="ngForm" (ngSubmit)="studentpost(ref.value, ref.reset())" >
+            <div class="form-group">
+                <label for="">Name<sup class="text-danger">*</sup></label>
+                <input type="text" name="name" id="" class="form-control" [(ngModel)]=nm #ref1=ngModel required ngModel>
+             </div>
+
+
+            <div *ngIf="ref1.invalid && (ref1.dirty||ref1.touched)" class="alert alert-danger">
+                <div *ngIf="ref1.invalid && ref1.touched"></div>
+                <div *ngIf="ref1.errors?.required">The Name is Mandatory </div>
+            </div>
+
+            <div class="form-group"> <label for="">Email</label>
+                <input type="email" name="email" id="" class="form-control" ngModel></div>
+
+            <div><label for="" class="form-group">Date Of Birth</label>
+                <input type="date" name="DOB" id="" class="form-control" ngModel></div>
+
+            <div> <label for="" class="form-group">Mobil Number<sup class="text-danger">*</sup></label>
+                <input type="text" name="mobil" class="form-control" [(ngModel)]=mobil #ref3=ngModel
+                    maxlength="10" ngModel>
+            </div>
+
+
+            <div> <label  class="form-group">Father/Guardian name</label>
+                <input type="name" name="fathername" class="form-control" ngModel></div>
+
+            <div> <label for="" class="form-group">Guardian/Father MobilNumber<sup class="text-danger">*</sup></label>
+                <input type="text" name="fathermobil"  class="form-control" [(ngModel)]=fathermobil #ref5=ngModel ngModel
+                maxlength="10" minlength="10" >
+                </div>
+
+            
+                <label for="">select gender</label>
+            
+                <div>
+                    <label for="">
+                    <input type="radio" name="gender"  value="Male" ngModel>Male <br>
+                    <input type="radio" name="gender" value="Female" ngModel> Femle </label>
+                </div>
+
+            <div class="form-group">
+                <label for="">enter password</label>
+                <input type="password" name="password" class="form-control" ngModel>
+            </div>
+
+
+            <button type="submit" class="bg -success btn-lg" [disabled]=!ref.valid >submit</button>
+        </form>
+    </div>
+</div>
